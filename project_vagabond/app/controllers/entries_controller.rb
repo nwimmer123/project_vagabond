@@ -6,5 +6,6 @@ class EntriesController < ApplicationController
 
 	def show
 		@entry = Entry.find_by_id(params[:id])
+		@user = User.find_by_id(params[:user_id])
 	end
 end
