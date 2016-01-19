@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
 
   get '/users/:user_id', to: 'entries#index', as: 'user_entries'
+  # CHANGE THE BELOW PATH ONCE WE ADD CITIES MODEL/CONTROLLER. PATH SHOULD BE '/cities/:city_id/entries/:id'
+  get '/users/:user_id/entries/:id', to: 'entries#show', as: 'user_entry'
 end

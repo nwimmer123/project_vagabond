@@ -4,5 +4,7 @@ class EntriesController < ApplicationController
 		@entries = @user.entries
 	end
 
-
+	def show
+		@entry = Entry.find_by_id(params[:id])
+	end
 end
