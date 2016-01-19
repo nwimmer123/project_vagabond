@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new', as: "new_user"
   post '/users', to: 'users#create'
 
+  get '/users/:user_id', to: 'entries#index', as: 'user_entries'
 end
