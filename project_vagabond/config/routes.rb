@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 	post '/login', to: 'sessions#create'
 	get '/logout', to: 'sessions#destroy'
 	
-	get '/home', to: 'users#create'
+	get '/home', to: 'users#index'
   get '/signup', to: 'users#new', as: "new_user"
   post '/users', to: 'users#create'
   get '/users/:user_id/edit', to: 'users#edit', as: 'edit_user'
@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   get '/cities', to: 'cities#index', as: 'cities'
   get '/cities/:id', to: 'cities#show', as:'city'
+  get '/cities/:id/new', to: 'entry#new'
 end
