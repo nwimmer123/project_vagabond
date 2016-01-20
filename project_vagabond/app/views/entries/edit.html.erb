@@ -1,0 +1,11 @@
+<h1>Edit entry:</h1>
+
+<%= form_for @entry, url: entry_path, method: "patch" do |f| %>
+	<div>
+		<%= f.text_field :title, value: @entry.title %>
+	</div>
+	<div>
+		<%= f.text_area :body, value: @entry.body %>
+	</div>
+	<%= f.submit "Save entry" %>
+<% end %>
