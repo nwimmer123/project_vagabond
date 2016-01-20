@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/entries/:id', to: 'entries#show', as: 'entry'
   get '/entries/:id/edit', to: 'entries#edit', as: "edit_entry"
   patch '/entries/:id', to: 'entries#update'
+  delete '/entries/:id', to: 'entries#destroy'
 
   get '/cities', to: 'cities#index', as: 'cities'
   get '/cities/:id', to: 'cities#show', as:'city'
