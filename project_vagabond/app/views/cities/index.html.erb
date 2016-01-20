@@ -1,0 +1,7 @@
+<h1>Cities currently on this site:</h1>
+<ul>
+	<% @cities.each do |city| %>
+		<li><%= link_to city.name, "/cities/#{city.id}" %></li>
+	<% end %>
+
+</ul>
