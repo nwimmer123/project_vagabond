@@ -34,4 +34,10 @@ class EntriesController < ApplicationController
 
 		redirect_to entry_path
 	end
+
+	def destroy
+		@entry = Entry.find_by_id(params[:id])
+		@entry.destroy
+		redirect_to entries_path
+	end
 end
