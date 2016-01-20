@@ -1,3 +1,7 @@
-<!-- Need to update with entries index information -->
+<h1>Entries on this site:</h1>
+<ul>
+	<% @entries.each do |entry| %>
+		<li><%= link_to entry.title, "/entries/#{entry.id}" %></li>
+	<% end %>
 
-<h1>Hello, This is Entries#index</h1>
+</ul>

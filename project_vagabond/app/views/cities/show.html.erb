@@ -3,6 +3,6 @@
 
 <ul>
 	<% @entries.each do |entry| %>
-		<li><%= link_to entry.title, "/users/#{entry.user_id}/entries/#{entry.id}" %></li>
+		<li><%= link_to entry.title, "/entries/#{entry.id}" %></li>
 	<% end %>
 </ul>

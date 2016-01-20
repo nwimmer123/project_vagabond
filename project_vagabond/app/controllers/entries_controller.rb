@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
 	def index
-		
+		@entries = Entry.all.sort{|a,b| b.created_at <=> a.created_at}
 	end
 
 	def show
