@@ -8,4 +8,5 @@ class CitiesController < ApplicationController
 		@city = City.find_by_id(params[:id])
 		@entries = @city.entries.sort{|a,b| b.created_at <=> a.created_at}
 	end
+
 end
