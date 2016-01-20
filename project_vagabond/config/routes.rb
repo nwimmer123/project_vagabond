@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 	get '/home', to: 'users#create'
   get '/signup', to: 'users#new', as: "new_user"
   post '/users', to: 'users#create'
-  get '/users/:user_id/edit', to: 'users#edit'
+  get '/users/:user_id/edit', to: 'users#edit', as: 'edit_user'
   put '/users/:user_id', to: 'users#update'
 
   get '/users/:user_id', to: 'entries#index', as: 'user_entries'
