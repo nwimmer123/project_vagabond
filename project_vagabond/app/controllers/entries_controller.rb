@@ -9,10 +9,20 @@ class EntriesController < ApplicationController
 	end
 
 	def new
-		
 	end
 
 	def create
+	end
 
+	def edit
+		@entry = Entry.find_by_id(params[:id])
+	end
+
+	def update
+		entry_params = params.require(:entry).permit(:title, :body)
+		@entry = Entry.find_by_id(params[:id])
+		@entry.update_attributes(entry_params)
+
+		redirect_to entry_path
 	end
 end
