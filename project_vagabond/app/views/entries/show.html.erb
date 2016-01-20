@@ -1,3 +1,8 @@
-<h1>"<%= @entry.title %>" by <%= @user.first_name.capitalize %></h1>
+<h1><%= City.find_by_id(@entry.city_id).name %></h1>
+<p>OP Info:</p>
+<p>Date joined: <%= @user.created_at %></p>
+<p>Current city: <%= @user.current_city %></p>
+<h2>"<%= @entry.title %>" by <%= @user.first_name.capitalize %></h2>
+
 
 <p><%= @entry.body %></p>

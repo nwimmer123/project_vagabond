@@ -1,0 +1,17 @@
+<h1>Hello, <%= @user.first_name.capitalize %>!</h1>
+<ul>
+	<li>
+		Current City: <%= @user.current_city %>
+	</li>
+	<li>
+		Date joined: <%= @user.created_at %>
+	</li>
+</ul>
+
+<p>You have <%= @user.entries.count %> entries currently posted on this site.</p>
+
+<ul>
+	<% @user.entries.each do |entry| %>
+		<li><%= link_to entry.title, "/users/#{entry.id}/entries/#{entry.id}" %></li>
+	<% end %>
+</ul>
