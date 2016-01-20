@@ -1,0 +1,8 @@
+<h1>Welcome to the <%= @city.name %> page!</h1>
+<%= image_tag ("#{@city.background_image}") %>
+
+<ul>
+	<% @entries.each do |entry| %>
+		<li><%= link_to entry.title, "/users/#{entry.user_id}/entries/#{entry.id}" %></li>
+	<% end %>
+</ul>
