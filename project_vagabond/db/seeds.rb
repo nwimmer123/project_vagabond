@@ -32,6 +32,7 @@ user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.
   user_params[:last_name] = FFaker::NameBR.last_name
   user_params[:email] = FFaker::Internet.free_email
   user_params[:password]  = "123"
+  user_params[:password_confirmation] = user_params[:password]
   user_params[:current_city] = FFaker::AddressUS.city
   # save the user
   new_user = User.create(user_params)
