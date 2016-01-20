@@ -8,12 +8,13 @@ Rails.application.routes.draw do
 	get '/home', to: 'users#index'
   get '/signup', to: 'users#new', as: "new_user"
   post '/users', to: 'users#create'
-  get '/users/:user_id/edit', to: 'users#edit', as: 'edit_user'
-  patch '/users/:user_id', to: 'users#update'
-
-  get '/users/:user_id', to: 'entries#index', as: 'user_entries'
+  get '/users/:id', to: 'users#show', as: 'user_profile'
+  get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
+  patch '/users/:id', to: 'users#update'
+  
+  get '/entries', to: 'entries#index', as: "entries"
   # CHANGE THE BELOW PATH ONCE WE ADD CITIES MODEL/CONTROLLER. PATH SHOULD BE '/cities/:city_id/entries/:id'
-  get '/users/:user_id/entries/:id', to: 'entries#show', as: 'user_entry'
+  get '/entries/:id', to: 'entries#show', as: 'entry'
 
   get '/cities', to: 'cities#index', as: 'cities'
   get '/cities/:id', to: 'cities#show', as:'city'
