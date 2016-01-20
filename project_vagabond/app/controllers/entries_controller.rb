@@ -13,14 +13,10 @@ class EntriesController < ApplicationController
 	end
 
 	def create
-		entry_params = params.require(:entry).permit(:title, :body)
-		entry = Entry.new(entry_params)
-			p "here i am entry params #{entry}"
-		if entry.save
-			redirect_to "/entries/:id"
-		else
-			redirect_to "signup"
-		end
+		entry_params = params.require(:entry).permit(:title, :body, :city_id)
+		@entry = Entry.new(entry_params.merge(user_id: session[:user_id]))
+		@entry.save
+		redirect_to entry_path(@entry.id)
 	end
 
 	def edit

@@ -5,5 +5,7 @@
 	<br>
 	<br>
 	Body: <%= f.text_area :body %>
+
+	<%= f.hidden_field :city_id, value: params[:id] %> 
 	<%= f.submit "Submit" %>
 <% end %>
