@@ -24,6 +24,11 @@ class UsersController < ApplicationController
 	end
 
 	def update
+		user_id = params[:user_id]
+		user = User.find_by_id(user_id)
+		current_params = params.require(:user).permit(:first_name, :last_name, :current_city)
+		user.update_attributes(current_params)
+		redirect_to(user_entries_path)
 	end
 
 

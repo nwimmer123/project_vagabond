@@ -1,4 +1,4 @@
-<%= form_for @user, url: '/users/:user_id' do |f| %>
+<%= form_for @user, url: {action: "update"} do |f| %>
 	
 	First Name: <%= f.text_field :first_name %>
 	Last Name: <%= f.text_field :last_name %>
