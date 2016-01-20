@@ -12,6 +12,6 @@
 
 <ul>
 	<% @user.entries.each do |entry| %>
-		<li><%= link_to entry.title, "/users/#{entry.id}/entries/#{entry.id}" %></li>
+		<li><%= link_to entry.title, entry_path(entry.id) %></li>
 	<% end %>
 </ul>

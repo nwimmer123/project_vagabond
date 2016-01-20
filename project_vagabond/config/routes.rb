@@ -22,4 +22,5 @@ Rails.application.routes.draw do
   get '/cities/:id', to: 'cities#show', as:'city'
   get '/cities/:id/new', to: 'entries#new', as:'new_city_entry'
   post '/entries', to: 'entries#create'
+
 end
