@@ -13,11 +13,11 @@
 Entry.destroy_all
 User.destroy_all
 
-user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.com", password: 123, current_city: "San Francisco"})
+user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.com", password: "123", current_city: "San Francisco"})
 10.times do
     new_entry = Entry.new
     new_entry.title = FFaker::HealthcareIpsum.words(rand(8)+2).join(" ")
-    new_entry.content = FFaker::HealthcareIpsum.paragraphs(1+ rand(4)).join("\n")
+    new_entry.body = FFaker::HealthcareIpsum.paragraphs(1+ rand(4)).join("\n")
     # save the entry
     new_entry.save
     # associate the entry with the user
@@ -32,7 +32,7 @@ user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.
   user_params[:last_name] = FFaker::NameBR.last_name
   user_params[:email] = FFaker::Internet.free_email
   user_params[:password]  = "123"
-  user_params[:password_confirmation] = user_params[:password]
+  # user_params[:password_confirmation] = user_params[:password]
   user_params[:current_city] = FFaker::AddressUS.city
   # save the user
   new_user = User.create(user_params)
@@ -41,7 +41,7 @@ user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.
   10.times do
     new_entry = Entry.new
     new_entry.title = FFaker::HealthcareIpsum.words(rand(8)+2).join(" ")
-    new_entry.content = FFaker::HealthcareIpsum.paragraphs(1+ rand(4)).join("\n")
+    new_entry.body = FFaker::HealthcareIpsum.paragraphs(1+ rand(4)).join("\n")
     # save the entry
     new_entry.save
     # associate the entry with the user
