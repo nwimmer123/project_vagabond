@@ -1,8 +1,14 @@
 <%= form_for @user, url: {action: "update"} do |f| %>
 	
-	First Name: <%= f.text_field :first_name %>
-	Last Name: <%= f.text_field :last_name %>
-	Current City: <%= f.text_field :current_city %>
+	<div>
+	First Name: <br><%= f.text_field :first_name %><br><br>
+	</div>
+	<div>
+	Last Name: <br><%= f.text_field :last_name %><br><br>
+	</div>
+	<div>
+	Current City: <br><%= f.text_field :current_city %><br><br>
+	</div>
 	<%= f.submit "Submit" %>
 
 <% end %>
