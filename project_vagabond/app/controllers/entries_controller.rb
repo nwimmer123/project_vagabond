@@ -9,7 +9,10 @@ class EntriesController < ApplicationController
 	end
 
 	def new
-		current_city_id = params[:id]
-		# @current_city = name.current_city.id
+		
+	end
+
+	def create
+
 	end
 end
