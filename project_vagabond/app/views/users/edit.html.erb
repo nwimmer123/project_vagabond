@@ -1,0 +1,8 @@
+<%= form_for @user, url: {action: "update"} do |f| %>
+	
+	First Name: <%= f.text_field :first_name %>
+	Last Name: <%= f.text_field :last_name %>
+	Current City: <%= f.text_field :current_city %>
+	<%= f.submit "Submit" %>
+
+<% end %>
