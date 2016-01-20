@@ -12,10 +12,15 @@ class UsersController < ApplicationController
 		user = User.new(user_params)
 		if user.save
 			session[:user_id] = user.id
-			redirect_to "/users/#{session[:user_id]}"
+			redirect_to my_profile_path
 		else
 			redirect_to '/signup'
 		end
+	end
+
+	def profile
+		@user = User.find_by_id(session[:user_id])
+		render :show
 	end
 
 	def show

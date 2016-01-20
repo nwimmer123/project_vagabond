@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 	get '/logout', to: 'sessions#destroy', as: 'logout'
 	
 	get '/home', to: 'users#index'
+  get '/profile', to: "users#profile", as: "my_profile"
   get '/signup', to: 'users#new', as: 'new_user'
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show', as: 'user_profile'
