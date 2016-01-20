@@ -9,9 +9,18 @@ class EntriesController < ApplicationController
 	end
 
 	def new
+		@entry = Entry.new
 	end
 
 	def create
+		entry_params = params.require(:entry).permit(:title, :body)
+		entry = Entry.new(entry_params)
+			p "here i am entry params #{entry}"
+		if entry.save
+			redirect_to "/entries/:id"
+		else
+			redirect_to "signup"
+		end
 	end
 
 	def edit
