@@ -3,12 +3,29 @@
 		<p><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></p>
 		<p>Current City: <%= @user.current_city %></p>
 		<p>Date joined: <%= @user.created_at %></p>
+		<% if params[:id] == session[:user_id].to_s || params[:action] == "profile" %>
+			<%= button_to "Edit Profile", edit_user_path(@user.id), method: "get", class: "btn btn-primary" %>
+		<% end %>
 	</div>
 	<div class="col-md-6">
-		<ul>
-			<% @user.entries.each do |entry| %>
-				<li><%= link_to entry.title, entry_path(entry.id) %></li>
-			<% end %>
-		</ul>
+
+		<% @user.entries.each do |entry| %>
+			<div class="col-md-12 entry-information" data-id="<%= entry.id %>">
+				
+				<% if params[:id] == session[:user_id].to_s || params[:action] == "profile" %>
+					<div class="col-xs-10">
+						<p><%= link_to entry.title, entry_path(entry.id) %></p>
+					</div>
+					<div class="col-xs-2">
+						<%= button_to "Edit", edit_entry_path(entry.id), method: "get", class: "btn btn-primary" %>
+					</div>
+				<% else %>
+					<div class="col-xs-12">
+						<p><%= link_to entry.title, entry_path(entry.id) %></p>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
+
 	</div>
 </div>
