@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 	before_action :active_user?, only: [:edit]
 
 	def index
+		@cities = City.all
 	end
 
 	def new
