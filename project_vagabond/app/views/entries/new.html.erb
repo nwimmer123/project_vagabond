@@ -1,10 +1,31 @@
-<h1>Add A New Entry </h1>
+<section id='new-entry-form' class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+			<%= form_for :entry, url: {action: "create"} do |f| %>
+			  <fieldset>
+			    <legend>New entry for <%= @city.name %>:</legend>
 
-<%= form_for :entry, url: {action: "create"} do |f| %>
-	<%= f.text_field :title, placeholder: "Title" %>
-	<br>
-	<%= f.text_area :body, placeholder: "Body text" %>
+			    <div class="form-group">
+			      <div class="col-md-12">
+			        <%= f.text_field :title, required: true, class: "form-control", placeholder: "Title" %><br>
+			      </div>
+			    </div>
 
-	<%= f.hidden_field :city_id, value: params[:id] %><br>
-	<%= f.submit "Submit" %>
-<% end %>
+			    <div class="form-group">
+			      <div class="col-md-12">
+			        <%= f.text_area :body, required: true, class: "form-control", placeholder: "Body text" %><br>
+			        <%= f.hidden_field :city_id, value: params[:id] %>
+			      </div>
+			    </div>
+
+			    <div class="form-group">
+			      <div class="col-md-12">
+			        <%= f.submit "Post entry", class: "btn btn-success" %>
+			      </div>
+			    </div>
+			    
+			  </fieldset>
+			<% end %>
+		</div>
+	</div>
+</section>
