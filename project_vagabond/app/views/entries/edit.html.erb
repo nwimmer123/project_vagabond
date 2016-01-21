@@ -1,11 +1,30 @@
-<h1>Edit entry:</h1>
+<section id='edit-entry-form' class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+			<%= form_for @entry, url: entry_path, method: "patch" do |f| %>
+			  <fieldset>
+			    <legend>Edit entry in <%= @city.name %>:</legend>
 
-<%= form_for @entry, url: entry_path, method: "patch" do |f| %>
-	<div>
-		<%= f.text_field :title, value: @entry.title %>
+			    <div class="form-group">
+			      <div class="col-md-12">
+			        <%= f.text_field :title, required: true, class: "form-control", value: @entry.title %><br>
+			      </div>
+			    </div>
+
+			    <div class="form-group">
+			      <div class="col-md-12">
+			        <%= f.text_area :body, required: true, class: "form-control", value: @entry.body %><br>
+			      </div>
+			    </div>
+
+			    <div class="form-group">
+			      <div class="col-md-12">
+			        <%= f.submit "Update entry", class: "btn btn-primary" %>
+			      </div>
+			    </div>
+			    
+			  </fieldset>
+			<% end %>
+		</div>
 	</div>
-	<div>
-		<%= f.text_area :body, value: @entry.body %>
-	</div>
-	<%= f.submit "Save entry" %>
-<% end %>
+</section>
