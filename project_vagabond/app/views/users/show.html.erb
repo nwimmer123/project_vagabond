@@ -1,17 +1,14 @@
-<h1>Hello, <%= @user.first_name.capitalize %>!</h1>
-<ul>
-	<li>
-		Current City: <%= @user.current_city %>
-	</li>
-	<li>
-		Date joined: <%= @user.created_at %>
-	</li>
-</ul>
-
-<p>You have <%= @user.entries.count %> entries currently posted on this site.</p>
-
-<ul>
-	<% @user.entries.each do |entry| %>
-		<li><%= link_to entry.title, entry_path(entry.id) %></li>
-	<% end %>
-</ul>
+<div class="row">
+	<div class="col-md-2 col-md-offset-2">
+		<p><%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></p>
+		<p>Current City: <%= @user.current_city %></p>
+		<p>Date joined: <%= @user.created_at %></p>
+	</div>
+	<div class="col-md-6">
+		<ul>
+			<% @user.entries.each do |entry| %>
+				<li><%= link_to entry.title, entry_path(entry.id) %></li>
+			<% end %>
+		</ul>
+	</div>
+</div>
