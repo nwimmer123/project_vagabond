@@ -18,8 +18,12 @@ class EntriesController < ApplicationController
 	def create
 		entry_params = params.require(:entry).permit(:title, :body, :city_id)
 		@entry = Entry.new(entry_params.merge(user_id: session[:user_id]))
-		@entry.save
-		redirect_to entry_path(@entry.id)
+		if @entry.save
+			redirect_to entry_path(@entry.id)
+		else
+			redirect_to "/cities/#{params[:entry][:city_id]}/new"
+			flash[:error] = "Wrong number of characters"
+		end
 	end
 
 	def edit
