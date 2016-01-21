@@ -24,7 +24,7 @@ h1 {
 }
 .navbar-default {
 	
-    background-color: #A879EB;
+    background-color: #A23830;
 }
 
 .navbar-default .navbar-brand {
@@ -33,14 +33,19 @@ h1 {
 .navbar-default .navbar-nav>li>a {
 	color: white;
 }
+i.material-icons {
+	font-size: 36px;
+	color: #EB984E;
+}
 
- #headimg img {
+#headimg img {
 	padding: 10px;
-	max-width: 75%;
-	max-height: 65%;
+	width: 100%;
+	
  }
+
 .entry {
-	background-color: #F5EEF8;
+	background-color: #FDF2E9;
 	padding: 5px;
 	margin-bottom:10px;
 }
