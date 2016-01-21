@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
 	before_action :logged_in?, only: [:edit]
-	before_action :active_user?, only: [:edit]
 
 	def index
 	end
@@ -32,13 +31,21 @@ class UsersController < ApplicationController
 
 	def edit
 		set_user
+		if @user.id != current_user.id.to_s
+			flash[:notice] = "You do not have access to edit profiles that are not your own."
+			redirect_to root_path
+		end
 	end
 
 	def update
 		set_user
+		if @user.id != current_user.id.to_s
+			flash[:notice] = "You do not have access to update profiles that are not your own."
+			redirect_to root_path
+		end
 		current_params = params.require(:user).permit(:first_name, :last_name, :current_city)
 		@user.update_attributes(current_params)
-		redirect_to(my_profile_path)
+		redirect_to my_profile_path
 	end
 
 
@@ -46,14 +53,6 @@ private
 
 	def user_params
 		params.require(:user).permit(:first_name, :email, :last_name, :password, :password_confirmation, :current_city)
-	end
-
-
-	def active_user?
-		if params[:id] != session[:user_id].to_s
-			flash[:notice] = "You do not have access to edit profiles that are not your own."
-			redirect_to root_path
-		end
 	end
 
 	def set_user
