@@ -6,8 +6,7 @@
 
 <p><%= @entry.body %></p>
 
-<% if session[:user_id] %>
+<% if session[:user_id] == @entry.user_id %>
 	<%= link_to "Edit", edit_entry_path %> | 
 	<%= link_to 'Delete',url_for(action: :destroy, id: @entry.id),method: :delete, data: {confirm: "Are you sure you want to delete '#{@entry.title}'?"} %>
-
 <% end %>
