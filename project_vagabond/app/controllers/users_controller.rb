@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 	before_action :logged_in?, only: [:edit]
 	before_action :active_user?, only: [:edit]
+
 	def index
 	end
 
