@@ -15,7 +15,42 @@
  *= require_self
  */
 
+body{
+	font-family: 'Averia Sans Libre', cursive;
+}
+
+h1 {
+	color: #F0B27A;
+}
+.navbar-default {
+	
+    background-color: #A23830;
+}
+
+.navbar-default .navbar-brand {
+	color: white;
+}
+.navbar-default .navbar-nav>li>a {
+	color: white;
+}
+i.material-icons {
+	font-size: 36px;
+	color: #EB984E;
+}
+
+#headimg img {
+	padding: 10px;
+	width: 100%;
+	
+ }
+
+.entry {
+	background-color: #FDF2E9;
+	padding: 5px;
+	margin-bottom:10px;
+}
 
 textarea.form-control {
 	height: 200px;
 }
+
