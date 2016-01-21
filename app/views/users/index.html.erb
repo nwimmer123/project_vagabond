@@ -1,6 +1,9 @@
 <div class="col-md-12 splash">
 	<h1>Welcome to Vagabond</h1>
 	<p>Recommendations for your favorite cities!</p>
+	<div id = "splashimg">
+	<%= image_tag 'http://sparechangenews.net/wp-content/uploads/2014/08/cover.8.221.jpg' %>
+	</div>
 	<% @cities.each do | city | %>
 		<%= city.name %>
 		<br>

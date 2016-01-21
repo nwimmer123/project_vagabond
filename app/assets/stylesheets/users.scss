@@ -2,10 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 .splash {
 	text-align: center;
 }
 
 .entry-information {
 	margin-bottom: 5px;
+}
+
+#splashimg img{
+	max-width: 50%;
+	padding-bottom: 20px;
 }
