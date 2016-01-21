@@ -1,4 +1,7 @@
 class EntriesController < ApplicationController
+	before_action :logged_in?, only: [:edit, :destroy, :new]
+	before_action :current_user?, only: [:edit]
+	
 	def index
 		@entries = Entry.all.sort{|a,b| b.created_at <=> a.created_at}
 	end
@@ -40,4 +43,19 @@ class EntriesController < ApplicationController
 		@entry.destroy
 		redirect_to entries_path
 	end
+
+	private
+
+	def current_user?
+		entry = Entry.find_by_id(params[:id]).user_id
+		if entry != session[:user_id]
+			flash[:notice] = "NO."
+			redirect_to entry_path
+		end
+
+		
+	end
+
+
+
 end
