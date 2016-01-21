@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 	before_action :logged_in?, only: [:edit]
+	before_action :set_user, only: [:show, :edit, :update]
 
 	def index
 	end
@@ -26,20 +27,17 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		set_user
 	end
 
 	def edit
-		set_user
-		if @user.id != current_user.id.to_s
+		if @user.id != current_user.id
 			flash[:notice] = "You do not have access to edit profiles that are not your own."
 			redirect_to root_path
 		end
 	end
 
 	def update
-		set_user
-		if @user.id != current_user.id.to_s
+		if @user.id != current_user.id
 			flash[:notice] = "You do not have access to update profiles that are not your own."
 			redirect_to root_path
 		end
