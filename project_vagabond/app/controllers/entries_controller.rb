@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+	before_action :logged_in?, only: [:edit, :destroy]
 	def index
 		@entries = Entry.all.sort{|a,b| b.created_at <=> a.created_at}
 	end
