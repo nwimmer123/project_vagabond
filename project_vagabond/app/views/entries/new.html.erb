@@ -1,11 +1,10 @@
 <h1>Add A New Entry </h1>
 
 <%= form_for :entry, url: {action: "create"} do |f| %>
-	Title: <%= f.text_field :title %>
+	<%= f.text_field :title, placeholder: "Title" %>
 	<br>
-	<br>
-	Body: <%= f.text_area :body %>
+	<%= f.text_area :body, placeholder: "Body text" %>
 
-	<%= f.hidden_field :city_id, value: params[:id] %> 
+	<%= f.hidden_field :city_id, value: params[:id] %><br>
 	<%= f.submit "Submit" %>
 <% end %>
