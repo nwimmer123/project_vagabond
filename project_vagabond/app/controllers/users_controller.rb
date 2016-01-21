@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 	end
 
 	def profile
-		@user = User.find_by_id(session[:user_id])
+		@user = current_user
 		render :show
 	end
 
@@ -31,13 +31,11 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		user_id = params[:id]
-		@user = User.find_by_id(user_id)
+		@user = User.find_by_id(params[:id])
 	end
 
 	def update
-		user_id = params[:id]
-		user = User.find_by_id(user_id)
+		user = User.find_by_id(params[:id])
 		current_params = params.require(:user).permit(:first_name, :last_name, :current_city)
 		user.update_attributes(current_params)
 		redirect_to(my_profile_path)
