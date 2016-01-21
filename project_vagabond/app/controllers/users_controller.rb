@@ -27,17 +27,17 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@user = User.find_by_id(params[:id])
+		set_user
 	end
 
 	def edit
-		@user = User.find_by_id(params[:id])
+		set_user
 	end
 
 	def update
-		user = User.find_by_id(params[:id])
+		set_user
 		current_params = params.require(:user).permit(:first_name, :last_name, :current_city)
-		user.update_attributes(current_params)
+		@user.update_attributes(current_params)
 		redirect_to(my_profile_path)
 	end
 
@@ -56,7 +56,9 @@ private
 		end
 	end
 
-
+	def set_user
+		@user = User.find_by_id(params[:id])
+	end
 
 
 
