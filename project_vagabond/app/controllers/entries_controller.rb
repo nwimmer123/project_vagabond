@@ -13,6 +13,7 @@ class EntriesController < ApplicationController
 
 	def new
 		@entry = Entry.new
+		@city = City.find_by_id(params[:id])
 	end
 
 	def create
@@ -28,6 +29,7 @@ class EntriesController < ApplicationController
 
 	def edit
 		@entry = Entry.find_by_id(params[:id])
+		@city = City.find_by_id(@entry.city_id)
 	end
 
 	def update
