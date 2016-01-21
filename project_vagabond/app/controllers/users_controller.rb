@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-	before_action :logged_in?, only: [:edit]
-	before_action :active_user?, only: [:edit]
+	before_action :logged_in?, only: [:edit, :update]
+	before_action :set_user, only: [:show, :edit, :update]
 
 	def index
 		@cities = City.all
@@ -23,25 +23,28 @@ class UsersController < ApplicationController
 	end
 
 	def profile
-		@user = User.find_by_id(session[:user_id])
+		@user = current_user
 		render :show
 	end
 
 	def show
-		@user = User.find_by_id(params[:id])
 	end
 
 	def edit
-		user_id = params[:id]
-		@user = User.find_by_id(user_id)
+		if !authorized?(@user)
+			flash[:notice] = "You do not have access to edit profiles that are not your own."
+			redirect_to root_path
+		end
 	end
 
 	def update
-		user_id = params[:id]
-		user = User.find_by_id(user_id)
+		if !authorized?(@user)
+			flash[:notice] = "You do not have access to update profiles that are not your own."
+			redirect_to root_path
+		end
 		current_params = params.require(:user).permit(:first_name, :last_name, :current_city)
-		user.update_attributes(current_params)
-		redirect_to(my_profile_path)
+		@user.update_attributes(current_params)
+		redirect_to my_profile_path
 	end
 
 
@@ -51,19 +54,12 @@ private
 		params.require(:user).permit(:first_name, :email, :last_name, :password, :password_confirmation, :current_city)
 	end
 
-
-	def active_user?
-		if params[:id] != session[:user_id].to_s
-			flash[:notice] = "You do not have access to edit profiles that are not your own."
-			redirect_to root_path
-		end
+	def set_user
+		@user = User.find_by_id(params[:id])
 	end
 
+	def authorize
+		
+	end
 
-
-
-
-
-
-	
 end

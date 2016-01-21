@@ -9,6 +9,7 @@ class EntriesController < ApplicationController
 	def show
 		@entry = Entry.find_by_id(params[:id])
 		@user = User.find_by_id(@entry.user_id)
+		@city = City.find_by_id(@entry.city_id)
 	end
 
 	def new
