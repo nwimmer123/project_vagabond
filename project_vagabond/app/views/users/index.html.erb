@@ -1,4 +1,10 @@
 <div class="col-md-12 splash">
 	<h1>Welcome to Vagabond</h1>
 	<p>Recommendations for your favorite cities!</p>
+	<% @cities.each do | city | %>
+		<%= city.name %>
+		<br>
+	<% end %>
+
+
 </div>
