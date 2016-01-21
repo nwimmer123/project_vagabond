@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-	before_action :logged_in?, only: [:edit]
+	before_action :logged_in?, only: [:edit, :update]
 	before_action :set_user, only: [:show, :edit, :update]
 
 	def index
@@ -30,14 +30,14 @@ class UsersController < ApplicationController
 	end
 
 	def edit
-		if @user.id != current_user.id
+		if !authorized?(@user)
 			flash[:notice] = "You do not have access to edit profiles that are not your own."
 			redirect_to root_path
 		end
 	end
 
 	def update
-		if @user.id != current_user.id
+		if !authorized?(@user)
 			flash[:notice] = "You do not have access to update profiles that are not your own."
 			redirect_to root_path
 		end
@@ -57,9 +57,8 @@ private
 		@user = User.find_by_id(params[:id])
 	end
 
+	def authorize
+		
+	end
 
-
-
-
-	
 end
