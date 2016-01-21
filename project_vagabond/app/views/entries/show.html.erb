@@ -4,7 +4,10 @@
 <p>Current city: <%= @user.current_city %></p>
 <h2>"<%= @entry.title %>" by <%= @user.first_name.capitalize %></h2>
 
-
 <p><%= @entry.body %></p>
-<%= link_to "Edit", edit_entry_path %> | 
-<%= link_to 'Delete',url_for(action: :destroy, id: @entry.id),method: :delete, data: {confirm: "Are you sure you want to delete '#{@entry.title}'?"} %>
+
+<% if session[:user_id] %>
+	<%= link_to "Edit", edit_entry_path %> | 
+	<%= link_to 'Delete',url_for(action: :destroy, id: @entry.id),method: :delete, data: {confirm: "Are you sure you want to delete '#{@entry.title}'?"} %>
+
+<% end %>
