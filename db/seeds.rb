@@ -14,12 +14,13 @@ Entry.destroy_all
 User.destroy_all
 City.destroy_all
 
-sf = City.create(name:"San Francisco", background_image:"https://cdn1.getyourguide.com/niwziy2l9cvz/1XBkFZIKqYw0248uGCuaWG/cc3d1c8fec71b6706ac961b449d2d823/san-francisco-san-francisco-bay-1112x630.jpg")
-chi = City.create(name:"Chicago", background_image:"https://upload.wikimedia.org/wikipedia/commons/8/82/Chicago_sunrise_1.jpg")
-ny = City.create(name:"New York City", background_image:"http://www.ssn.tv/wp-content/uploads/2014/07/NYC-1.jpg")
-lo = City.create(name:"London", background_image: "http://www.hdwallpapers.in/walls/tower_bridge_of_london-wide.jpg")
-gi = City.create(name:"Gibraltor", background_image: "http://www.visitgibraltar.gi/images/homepage_slider/df1aw_slide2.jpeg")
-sc = City.create(name:"Sioux City", background_image: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Woodbury_County_Courthouse_setting_from_WNW_1.JPG")
+sf = City.create(name:"San Francisco", background_image:"https://cdn1.getyourguide.com/niwziy2l9cvz/1XBkFZIKqYw0248uGCuaWG/cc3d1c8fec71b6706ac961b449d2d823/san-francisco-san-francisco-bay-1112x630.jpg", coordinates: "37.774929,-122.419416")
+chi = City.create(name:"Chicago", background_image:"https://upload.wikimedia.org/wikipedia/commons/8/82/Chicago_sunrise_1.jpg", coordinates: "41.878114,-87.629798")
+ny = City.create(name:"New York City", background_image:"http://www.ssn.tv/wp-content/uploads/2014/07/NYC-1.jpg", coordinates: "40.712784,-74.005941")
+lo = City.create(name:"London", background_image: "http://www.hdwallpapers.in/walls/tower_bridge_of_london-wide.jpg", coordinates: "51.507351,-0.127758")
+gi = City.create(name:"Gibraltor", background_image: "http://www.visitgibraltar.gi/images/homepage_slider/df1aw_slide2.jpeg", coordinates: "36.140751,-5.353585")
+sc = City.create(name:"Sioux City", background_image: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Woodbury_County_Courthouse_setting_from_WNW_1.JPG", coordinates: "42.499994,-96.400307")
+
 
 user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.com", password: "123", current_city: "San Francisco"})
 10.times do
