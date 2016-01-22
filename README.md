@@ -1,5 +1,5 @@
 # Vagabonder
-## By: Joe, Rich, Kayvon and Noah
+## By: [Joe](https://github.com/jroers), [Rich](https://github.com/bw-giraffe), [Kayvon](https://github.com/Kranjbar), and [Noah](https://github.com/nwimmer123)
 
 #Overview
 
@@ -11,7 +11,7 @@ You do not have to sigup to see the entries that have been written about the cit
 
 #Screenshot
 
-![Vagabonder Screenshot](http://i.imgur.com/AtW3Tmk.png)
+![Vagabonder Screenshot](http://i.imgur.com/yTxRkni.png)
 
 #Links
 
@@ -21,9 +21,11 @@ You do not have to sigup to see the entries that have been written about the cit
 
 #Our Approach
 
-We pair programmed for the first two days and at the end of Thursday we worked more independently on styling, refactoring and the creation of this README. This was a good method, because we doubled up on the hardest elements of the project, but when the work was simpler we spread out the work more which increased our efficiency. This maximized productivity and maintained high code standards.
+This was our first project together. 
 
-We spent a lot of time the first day discussing git, so we would not have problems down the road. This proved a good investment in time. We also had standups every couple hours to check in. 
+We pair programmed and utilized agaile development for the first few days of the project. We continued to use this approach throughout the week but worked more independently on later iterations. This was a good method, because we doubled up on the hardest elements of the project, but when the site reached a basic functionality, we spread out the work more which increased our efficiency. This maximized productivity and maintained high code standards.
+
+We spent a lot of time the first day discussing git, so we would not have problems down the road. This proved to be a good use of time, as we ran into very few merge conflicts. We also conducted stand-ups every couple hours to check in. 
 
 Another valuable policy we established was that if one team got seriously stuck for more then 20 minutes, we would ask for input from the whole team. This helped minimize roadblocks, and kept the whole team moving forward.
 
@@ -65,16 +67,26 @@ Creating this function code was quite a headache!
 		end
 	end	
 ```
+
 The most problematic line was the redirect.
 
 ```
 redirect_to "/cities/#{params[:entry][:city_id]}/new"
 ```
+
 Which is currently very ugly and could be refactored. In fact it may at this point. 
 
 We spent a couple hours getting nil values for our city id because we could not figure out how to drill into our params successfully to get the city id. We tried, many, many different combinations and read through rail docs to no avail. It was very frustrating. Thankfully Rich figured it out.
 
 Go Rich!!!
+
+Another issue we encountered was datatype conflicts when comparing different ids
+
+```
+entry = Entry.find_by_id(params[:id]).user_id
+if entry != session[:user_id]
+```
+
 
 #Tech Stack
 
