@@ -1,10 +1,21 @@
 <div class="col-md-12 splash">
 	<h1>Welcome to Vagabond</h1>
 	<p>Recommendations for your favorite cities!</p>
-	<% @cities.each do | city | %>
-		<%= city.name %>
-		<br>
-	<% end %>
-
-
+	<div id = "splashimg">
+	<%= image_tag 'http://sparechangenews.net/wp-content/uploads/2014/08/cover.8.221.jpg' %>
+	</div>
 </div>
+<div class = "row">
+	<% @cities.each do | city | %>
+	<div class = "col-xs-12 col-xs-offset-2 col-sm-3 col-sm-offset-2 col-md-3 col-md-offset-2 col-lg-3 col-lg-offset-2" id = "mapgrid">
+		<% 	latlng = city.coordinates.split(",")	%>
+		<% lat = latlng[0] %>
+		<% lng = latlng[1] %>
+		<%= link_to city.name, city_path(city.id) %>
+		<br>
+		<%= content_tag(:iframe,'', width: 300, height: 300, src: "https://www.google.com/maps/embed/v1/view?zoom=11&center=#{lat}%2C#{lng}&key=#{@mai_key}") %>
+		<br>
+	</div>
+	<% end %>
+</div>
+

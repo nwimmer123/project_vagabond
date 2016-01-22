@@ -33,9 +33,15 @@ h1 {
 .navbar-default .navbar-nav>li>a {
 	color: white;
 }
-i.material-icons {
+
+#entryicons{
+	color: #F0B27A;
 	font-size: 36px;
-	color: #EB984E;
+}
+
+#entrybutton{
+	
+	font-size: 32px;
 }
 
 #headimg img {

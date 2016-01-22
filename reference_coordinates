@@ -1,0 +1,64 @@
+2.2.1 :002 > London = City.find_by_id(10)
+  City Load (0.3ms)  SELECT  "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT 1  [["id", 10]]
+ => #<City id: 10, name: "London", background_image: "http://www.hdwallpapers.in/walls/tower_bridge_of_l...", created_at: "2016-01-21 22:38:08", updated_at: "2016-01-21 22:38:08", coordinates: nil> 
+2.2.1 :003 > London.coordinates = "51.507351,-0.127758"
+ => "51.507351,-0.127758" 
+2.2.1 :004 > London.save
+   (0.2ms)  BEGIN
+  SQL (0.4ms)  UPDATE "cities" SET "coordinates" = $1, "updated_at" = $2 WHERE "cities"."id" = $3  [["coordinates", "51.507351,-0.127758"], ["updated_at", "2016-01-22 00:26:44.994068"], ["id", 10]]
+   (0.5ms)  COMMIT
+ => true 
+2.2.1 :005 > Sioux = City.find_by(name: "Sioux City")
+  City Load (0.4ms)  SELECT  "cities".* FROM "cities" WHERE "cities"."name" = $1 LIMIT 1  [["name", "Sioux City"]]
+ => #<City id: 12, name: "Sioux City", background_image: "https://upload.wikimedia.org/wikipedia/commons/d/d...", created_at: "2016-01-21 22:38:08", updated_at: "2016-01-21 22:38:08", coordinates: nil> 
+2.2.1 :006 > Sioux.coordinates = "42.499994,-96.400307"
+ => "42.499994,-96.400307" 
+2.2.1 :007 > Sioux.save
+   (0.2ms)  BEGIN
+  SQL (0.4ms)  UPDATE "cities" SET "coordinates" = $1, "updated_at" = $2 WHERE "cities"."id" = $3  [["coordinates", "42.499994,-96.400307"], ["updated_at", "2016-01-22 00:28:09.190371"], ["id", 12]]
+   (0.5ms)  COMMIT
+ => true 
+2.2.1 :008 > Gib = City.find_by(name: 
+2.2.1 :009 >     "Gibraltor")
+  City Load (0.4ms)  SELECT  "cities".* FROM "cities" WHERE "cities"."name" = $1 LIMIT 1  [["name", "Gibraltor"]]
+ => #<City id: 11, name: "Gibraltor", background_image: "http://www.visitgibraltar.gi/images/homepage_slide...", created_at: "2016-01-21 22:38:08", updated_at: "2016-01-21 22:38:08", coordinates: nil> 
+2.2.1 :010 > Gib.coordinates = "36.140751,-5.353585"
+ => "36.140751,-5.353585" 
+2.2.1 :011 > Gib.save
+   (0.2ms)  BEGIN
+  SQL (0.4ms)  UPDATE "cities" SET "coordinates" = $1, "updated_at" = $2 WHERE "cities"."id" = $3  [["coordinates", "36.140751,-5.353585"], ["updated_at", "2016-01-22 00:29:21.084756"], ["id", 11]]
+   (1.4ms)  COMMIT
+ => true 
+2.2.1 :012 > SF = City.find_by(name: "San Francisco")
+  City Load (0.4ms)  SELECT  "cities".* FROM "cities" WHERE "cities"."name" = $1 LIMIT 1  [["name", "San Francisco"]]
+ => #<City id: 7, name: "San Francisco", background_image: "https://cdn1.getyourguide.com/niwziy2l9cvz/1XBkFZI...", created_at: "2016-01-21 22:38:08", updated_at: "2016-01-21 22:38:08", coordinates: nil> 
+2.2.1 :013 > SF.coordinates = "37.774929,-122.419416"
+ => "37.774929,-122.419416" 
+2.2.1 :014 > SF.save
+   (0.2ms)  BEGIN
+  SQL (0.4ms)  UPDATE "cities" SET "coordinates" = $1, "updated_at" = $2 WHERE "cities"."id" = $3  [["coordinates", "37.774929,-122.419416"], ["updated_at", "2016-01-22 00:30:30.507314"], ["id", 7]]
+   (0.6ms)  COMMIT
+ => true 
+2.2.1 :015 > NYC = City.find_by(name: "New York City")
+  City Load (0.4ms)  SELECT  "cities".* FROM "cities" WHERE "cities"."name" = $1 LIMIT 1  [["name", "New York City"]]
+ => #<City id: 9, name: "New York City", background_image: "http://www.ssn.tv/wp-content/uploads/2014/07/NYC-1...", created_at: "2016-01-21 22:38:08", updated_at: "2016-01-21 22:38:08", coordinates: nil> 
+2.2.1 :016 > NYC.coordinates="40.712784,-74.005941"
+ => "40.712784,-74.005941" 
+2.2.1 :017 > NYC.save
+   (0.2ms)  BEGIN
+  SQL (0.4ms)  UPDATE "cities" SET "coordinates" = $1, "updated_at" = $2 WHERE "cities"."id" = $3  [["coordinates", "40.712784,-74.005941"], ["updated_at", "2016-01-22 00:31:15.554312"], ["id", 9]]
+   (1.3ms)  COMMIT
+ => true 
+2.2.1 :018 > CHIC = City.find_by(name: "Chicago")
+  City Load (0.4ms)  SELECT  "cities".* FROM "cities" WHERE "cities"."name" = $1 LIMIT 1  [["name", "Chicago"]]
+ => #<City id: 8, name: "Chicago", background_image: "https://upload.wikimedia.org/wikipedia/commons/8/8...", created_at: "2016-01-21 22:38:08", updated_at: "2016-01-21 22:38:08", coordinates: nil> 
+2.2.1 :019 > CHIC.coordinates = "41.878114,-87.629798"
+ => "41.878114,-87.629798" 
+2.2.1 :020 > CHIC.save
+   (0.2ms)  BEGIN
+  SQL (0.4ms)  UPDATE "cities" SET "coordinates" = $1, "updated_at" = $2 WHERE "cities"."id" = $3  [["coordinates", "41.878114,-87.629798"], ["updated_at", "2016-01-22 00:32:04.193246"], ["id", 8]]
+   (0.5ms)  COMMIT
+ => true 
+2.2.1 :021 > London
+ => #<City id: 10, name: "London", background_image: "http://www.hdwallpapers.in/walls/tower_bridge_of_l...", created_at: "2016-01-21 22:38:08", updated_at: "2016-01-22 00:26:44", coordinates: "51.507351,-0.127758"> 
+2.2.1 :022 > exit
