@@ -14,12 +14,14 @@ Entry.destroy_all
 User.destroy_all
 City.destroy_all
 
-sf = City.create(name:"San Francisco", background_image:"https://cdn1.getyourguide.com/niwziy2l9cvz/1XBkFZIKqYw0248uGCuaWG/cc3d1c8fec71b6706ac961b449d2d823/san-francisco-san-francisco-bay-1112x630.jpg", coordinates: "37.774929,-122.419416")
-chi = City.create(name:"Chicago", background_image:"https://upload.wikimedia.org/wikipedia/commons/8/82/Chicago_sunrise_1.jpg", coordinates: "41.878114,-87.629798")
-ny = City.create(name:"New York City", background_image:"http://www.ssn.tv/wp-content/uploads/2014/07/NYC-1.jpg", coordinates: "40.712784,-74.005941")
+sf = City.create(name:"San Francisco Bay Area", background_image:"https://cdn1.getyourguide.com/niwziy2l9cvz/1XBkFZIKqYw0248uGCuaWG/cc3d1c8fec71b6706ac961b449d2d823/san-francisco-san-francisco-bay-1112x630.jpg", coordinates: "37.774929,-122.419416")
+chi = City.create(name:"Chicagoland", background_image:"https://upload.wikimedia.org/wikipedia/commons/8/82/Chicago_sunrise_1.jpg", coordinates: "41.878114,-87.629798")
+ny = City.create(name:"New York City", background_image:"https://upload.wikimedia.org/wikipedia/commons/8/8d/Pano_Manhattan2007_amk.jpg", coordinates: "40.712784,-74.005941")
 lo = City.create(name:"London", background_image: "http://www.hdwallpapers.in/walls/tower_bridge_of_london-wide.jpg", coordinates: "51.507351,-0.127758")
-gi = City.create(name:"Gibraltor", background_image: "http://www.visitgibraltar.gi/images/homepage_slider/df1aw_slide2.jpeg", coordinates: "36.140751,-5.353585")
+gi = City.create(name:"Gibraltar", background_image: "http://www.visitgibraltar.gi/images/homepage_slider/df1aw_slide2.jpeg", coordinates: "36.140751,-5.353585")
 sc = City.create(name:"Sioux City", background_image: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Woodbury_County_Courthouse_setting_from_WNW_1.JPG", coordinates: "42.499994,-96.400307")
+bo = City.create(name:"Boston Area", background_image: "https://c2.staticflickr.com/6/5110/5607445665_f93e1183d7_b.jpg", coordinates: "42.360082,-71.058880")
+sj = City.create(name:"San Juan", background_image: "http://farm7.staticflickr.com/6047/6280735866_7fbbbbb7e2_b.jpg", coordinates: "18.466334,-66.105722")
 
 
 user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.com", password: "123", current_city: "San Francisco"})
@@ -31,7 +33,7 @@ user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.
     new_entry.save
     # associate the entry with the user
     user.entries.push new_entry
-    rand_num = rand(6)
+    rand_num = rand(8)
     if rand_num == 0
       sf.entries.push new_entry
     elsif rand_num == 1
@@ -42,6 +44,10 @@ user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.
       lo.entries.push new_entry
     elsif rand_num == 4
       gi.entries.push new_entry
+    elsif rand_num == 5
+      bo.entries.push new_entry
+    elsif rand_num == 6
+      sj.entries.push new_entry
     else
       sc.entries.push new_entry
     end
@@ -69,7 +75,7 @@ user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.
     new_entry.save
     # associate the entry with the user
     new_user.entries.push new_entry
-    rand_num = rand(6)
+    rand_num = rand(8)
     if rand_num == 0
       sf.entries.push new_entry
     elsif rand_num == 1
@@ -80,6 +86,10 @@ user = User.create({first_name: "Test", last_name: "Subject", email: "test@test.
       lo.entries.push new_entry
     elsif rand_num == 4
       gi.entries.push new_entry
+    elsif rand_num == 5
+      bo.entries.push new_entry
+    elsif rand_num == 6
+      sj.entries.push new_entry
     else
       sc.entries.push new_entry
     end
