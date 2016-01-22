@@ -23,7 +23,7 @@ You do not have to sigup to see the entries that have been written about the cit
 
 This was our first project together. 
 
-We pair programmed and utilized agaile development for the first few days of the project. We continued to use this approach throughout the week but worked more independently on later iterations. This was a good method, because we doubled up on the hardest elements of the project, but when the site reached a basic functionality, we spread out the work more which increased our efficiency. This maximized productivity and maintained high code standards.
+We pair programmed and utilized agile development for the first few days of the project. We continued to use this method throughout the week but worked more independently on later iterations. This was a good approach, because we doubled up on the hardest elements of the project, but when the site reached a basic functionality, we spread out the work more which increased our efficiency. This maximized productivity and maintained high code standards.
 
 We spent a lot of time the first day discussing git, so we would not have problems down the road. This proved to be a good use of time, as we ran into very few merge conflicts. We also conducted stand-ups every couple hours to check in. 
 
@@ -86,7 +86,10 @@ Another issue we encountered was datatype conflicts when comparing different ids
 entry = Entry.find_by_id(params[:id]).user_id
 if entry != session[:user_id]
 ```
+Luckily, we were able to query the datatypes and make adjustments by converting to strings or integers. 
 
+
+This was a fun, collaborative endeavour. 
 
 #Tech Stack
 
