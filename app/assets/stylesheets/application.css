@@ -34,14 +34,14 @@ h1 {
 	color: white;
 }
 
-#entryicons{
+i#entryicons.material-icons{
 	color: #F0B27A;
-	font-size: 36px;
+	font-size: 40px;
 }
 
-#entrybutton{
-	
+#addentry {
 	font-size: 32px;
+	position: relative;
 }
 
 #headimg img {

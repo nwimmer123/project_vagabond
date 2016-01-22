@@ -1,13 +1,12 @@
 <div class = "col-xs-12 col-lg-10 col-lg-offset-2"><h1>Welcome to the <%= @city.name %> page!</h1>
-<%= link_to new_city_entry_path do %>
-    <i class="material-icons" id = "entrybutton">add_box</i>
-    Add An Entry
-<% end %>
 </div>
 
 <div class = "col-lg-8 col-lg-offset-2" id = "headimg">
 <%= image_tag ("#{@city.background_image}") %>
+<strong id = "addentry"><%= link_to " + Add Entry", new_city_entry_path %></strong>
 </div>
+
+
 
 <div class = "row">
 	<% @entries.each do |entry| %>
@@ -20,4 +19,3 @@
 		</div>
 	<% end %>
 </div>
-
