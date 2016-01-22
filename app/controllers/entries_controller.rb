@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
 	before_action :current_user?, only: [:edit]
 	
 	def index
-		@entries = Entry.all.sort{|a,b| b.created_at <=> a.created_at}
+		@entries = Entry.order(created_at: :desc)
 	end
 
 	def show
