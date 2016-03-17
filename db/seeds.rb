@@ -21,3 +21,6 @@ lo = City.create(name:"London", background_image: "https://alitebox.files.wordpr
 sc = City.create(name:"Sioux City", background_image: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Woodbury_County_Courthouse_setting_from_WNW_1.JPG", coordinates: "42.499994,-96.400307")
 bo = City.create(name:"Boston Area", background_image: "https://c2.staticflickr.com/6/5110/5607445665_f93e1183d7_b.jpg", coordinates: "42.360082,-71.058880")
 sj = City.create(name:"San Juan", background_image: "http://farm7.staticflickr.com/6047/6280735866_7fbbbbb7e2_b.jpg", coordinates: "18.466334,-66.105722")
+pr = City.create(name:"Providence", background_image: "https://iscrapapp.com/wp-content/uploads/2014/03/Providence-scrap-yards.jpg", coordinates: "41.823,-71.418")
+sj = City.create(name:"Poughkeepsie", background_image: "https://upload.wikimedia.org/wikipedia/commons/6/64/Poughkeepsie,_NY_spring_2010_bird's-eye_view.JPG", coordinates: "41.700,-73.920")
+sj = City.create(name:"Johnstown", background_image: "http://www.visitjohnstownpa.com/sites/visitjohnstownpa.com/files/styles/cm_rotator_image/public/visit_johnstown_pa_slider_inclined_plane.jpg?itok=MNtbjIKx", coordinates: "40.328,-78.914")
