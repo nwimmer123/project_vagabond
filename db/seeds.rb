@@ -24,3 +24,6 @@ sj = City.create(name:"San Juan", background_image: "http://farm7.staticflickr.c
 pr = City.create(name:"Providence", background_image: "https://iscrapapp.com/wp-content/uploads/2014/03/Providence-scrap-yards.jpg", coordinates: "41.823,-71.418")
 sj = City.create(name:"Poughkeepsie", background_image: "https://upload.wikimedia.org/wikipedia/commons/6/64/Poughkeepsie,_NY_spring_2010_bird's-eye_view.JPG", coordinates: "41.700,-73.920")
 sj = City.create(name:"Johnstown", background_image: "http://www.visitjohnstownpa.com/sites/visitjohnstownpa.com/files/styles/cm_rotator_image/public/visit_johnstown_pa_slider_inclined_plane.jpg?itok=MNtbjIKx", coordinates: "40.328,-78.914")
+
+# sample code to insert city into database without wiping pre existing data
+# INSERT INTO cities (name, background_image, created_at, updated_at, coordinates) VALUES ('Arispe', 'http://dev.virtualearth.net/REST/v1/Imagery/Map/Aerial/40.948730,-94.216232/17?mapSize=596,446&key=AmdvKO2hNoyLePakiVzRBZiGPKCxV6MtwWneohoPfmXclTaRTzvT6_Ict5-PBHO6', '03/17/2016', '03/17/2016', '40.9494354,-94.2191198');
